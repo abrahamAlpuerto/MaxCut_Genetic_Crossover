@@ -134,10 +134,10 @@ def memetic_algorithm(graph):
 
 if __name__ == '__main__':
     # read data
-    graph = read_nxgraph('./data/plaw500_0.txt')
-    P_iter = 100
-    MaxIter = 100000
-    gamma = 70
+    graph = read_nxgraph('./data/gset/gset_14.txt')
+    P_iter = 290
+    MaxIter = 1000000
+    gamma = 95
     # vector = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1]
     # print(obj_maxcut(vector,graph))
     # generating random solutions
@@ -150,4 +150,12 @@ if __name__ == '__main__':
         total += obj_maxcut(i,graph)
     total /= 10
     print("Average of Population: ", total)
+
+    # while True:
+    #     population, new_binary_vector, new_score = generate_random_population(graph, 10)
+    #     if new_score > best_score:
+    #         best_binary_vector = copy.deepcopy(new_binary_vector)
+    #         best_score = new_score
+    #         print("Best Binary Vector:", best_binary_vector)
+    #         print("Best Score:", best_score)
 
