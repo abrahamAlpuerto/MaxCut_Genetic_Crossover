@@ -84,6 +84,7 @@ def tabu_search(initial_solution, graph):
     curr_score = best_score
     # Initialize iteration counter
     Iter = 0
+    pit = 0
     
     # Initialize tabu list and tabu tenure
     tabu_list = [0] * len(curr_solution)
@@ -112,13 +113,15 @@ def tabu_search(initial_solution, graph):
         if curr_score > best_score:
             best_solution = copy.deepcopy(curr_solution)
             best_score = curr_score
+            pit = 0
             
         
         # Increment iteration counter
         Iter += 1
-        
+        pit += 1
         # Check if best solution hasn't improved after P_iter iterations
-        if Iter % P_iter == 0 and curr_score <= best_score:
+        if pit == P_iter and curr_score <= best_score:
+            pit = 0
             curr_solution = perturb(curr_solution)
             curr_score = obj_maxcut(curr_solution, graph)
             tabu_list = [0] * len(curr_solution)
@@ -134,10 +137,10 @@ def memetic_algorithm(graph):
 
 if __name__ == '__main__':
     # read data
-    graph = read_nxgraph('./data/gset/gset_14.txt')
-    P_iter = 290
+    graph = read_nxgraph('./data/syn/powerlaw_500_ID29.txt')
+    P_iter = 250
     MaxIter = 1000000
-    gamma = 95
+    gamma = 50
     # vector = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1]
     # print(obj_maxcut(vector,graph))
     # generating random solutions
