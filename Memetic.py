@@ -90,13 +90,13 @@ def tabu_search(initial_solution, graph):
     tabu_list = [0] * len(curr_solution)
     maxT = 20  # Example value for tabu tenure
     
-    # Compute move gains Δv for each vertex v ∈ V
+    # Compute move gains
     move_gains = compute_move_gains(graph, curr_solution, tabu_list)
     while Iter < MaxIter:
         v = 0
         delta_v = -999999
         for i in range(0,len(move_gains)):
-            if delta_v < move_gains[i]:
+            if delta_v < move_gains[i] and tabu_list[i] <= 0:
                 delta_v = move_gains[i]
                 v = i
         
@@ -137,9 +137,9 @@ def memetic_algorithm(graph):
 
 if __name__ == '__main__':
     # read data
-    graph = read_nxgraph('./data/syn/powerlaw_500_ID29.txt')
-    P_iter = 250
-    MaxIter = 1000000
+    graph = read_nxgraph('./data/gset/gset_15.txt')
+    P_iter = 100
+    MaxIter = 100000
     gamma = 50
     # vector = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1]
     # print(obj_maxcut(vector,graph))
