@@ -88,7 +88,7 @@ def tabu_search(initial_solution, graph):
     
     # Initialize tabu list and tabu tenure
     tabu_list = [0] * len(curr_solution)
-    maxT = 20  # Example value for tabu tenure
+    maxT = 20  
     
     # Compute move gains
     move_gains = compute_move_gains(graph, curr_solution, tabu_list)
@@ -96,7 +96,7 @@ def tabu_search(initial_solution, graph):
         v = 0
         delta_v = -999999
         for i in range(0,len(move_gains)):
-            if delta_v < move_gains[i] and tabu_list[i] <= 0:
+            if delta_v < move_gains[i] and tabu_list[i] <= Iter:
                 delta_v = move_gains[i]
                 v = i
         
@@ -106,7 +106,7 @@ def tabu_search(initial_solution, graph):
         # print("Current ",curr_score)
         # print("Actual ",obj_maxcut(curr_solution,graph))
         # Update tabu list and move gains for each vertex v ∈ V
-        tabu_list[v] = maxT
+        tabu_list[v] = maxT + Iter
         move_gains = update_move_gains(v, move_gains, curr_solution, graph)
 
         # Update best solution if current solution is better
@@ -137,10 +137,10 @@ def memetic_algorithm(graph):
 
 if __name__ == '__main__':
     # read data
-    graph = read_nxgraph('./data/gset/gset_15.txt')
-    P_iter = 100
-    MaxIter = 100000
-    gamma = 50
+    graph = read_nxgraph('./data/gset/gset_14.txt')
+    P_iter = 200
+    MaxIter = 1000000
+    gamma = 75
     # vector = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1]
     # print(obj_maxcut(vector,graph))
     # generating random solutions
@@ -154,11 +154,11 @@ if __name__ == '__main__':
     total /= 10
     print("Average of Population: ", total)
 
-    # while True:
-    #     population, new_binary_vector, new_score = generate_random_population(graph, 10)
-    #     if new_score > best_score:
-    #         best_binary_vector = copy.deepcopy(new_binary_vector)
-    #         best_score = new_score
-    #         print("Best Binary Vector:", best_binary_vector)
-    #         print("Best Score:", best_score)
+    while True:
+        population, new_binary_vector, new_score = generate_random_population(graph, 10)
+        if new_score > best_score:
+            best_binary_vector = copy.deepcopy(new_binary_vector)
+            best_score = new_score
+            print("Best Binary Vector:", best_binary_vector)
+            print("Best Score:", best_score)
 
