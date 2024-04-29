@@ -22,7 +22,7 @@ def cross_over(population):
         if node_in_same_set:
             child.append(selected_parents[0][node])
         else:
-            child.append(random.radiant(0,1))
+            child.append(random.randint(0,1))
     child, child_score = tabu_search(child,graph)
     return child
 
