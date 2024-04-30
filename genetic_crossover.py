@@ -54,7 +54,7 @@ if __name__ == '__main__':
     num_parents = 4
     c_itMax = 20
     # read data
-    graph = read_nxgraph('./data/syn/powerlaw_500_ID27.txt')
+    graph = read_nxgraph('./data/syn/powerlaw_500_ID28.txt')
     print("Genetic Search Start")
     algorithm_run()
 
