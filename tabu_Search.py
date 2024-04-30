@@ -96,7 +96,7 @@ def tabu_search(initial_solution, graph):
     
     # Initialize tabu list and tabu tenure
     tabu_list = [0] * len(curr_solution)
-    maxT = 100
+    maxT = 150
     
     # Compute move gains
     move_gains = compute_move_gains(graph, curr_solution, tabu_list)

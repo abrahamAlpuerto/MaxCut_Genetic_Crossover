@@ -52,9 +52,9 @@ def algorithm_run():
 if __name__ == '__main__':
     # Constants
     num_parents = 4
-    c_itMax = 4
+    c_itMax = 20
     # read data
-    graph = read_nxgraph('./data/gset/gset_14.txt')
+    graph = read_nxgraph('./data/syn/powerlaw_500_ID27.txt')
     print("Genetic Search Start")
     algorithm_run()
 
