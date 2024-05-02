@@ -16,3 +16,6 @@ Binary Vectors for each graph tested in results.txt folder
 | Gset_14 | 3042 | 3064 | 3063 | -0.03% | 
 | Gset_15 | 3033 | 3050 | 3050 | 0.0% | 
 
+## References
+
+1) Qinghua Wu and Jin-Kao Hao: A Memetic Approach for the Max-Cut Problem, LERIA, Universit´e d’Angers, 2 Boulevard Lavoisier, 49045 Angers Cedex 01, France
