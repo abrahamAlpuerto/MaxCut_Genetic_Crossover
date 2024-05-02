@@ -29,17 +29,21 @@ def cross_over(population):
 def algorithm_run():
     population, best_binary_vector, best_score, population_scores = generate_random_population(graph, 10)
     c_iter = 0
+    print("Start Genetic Crossover")
     while c_iter < c_itMax:
         child = cross_over(population)
-        child_score = obj_maxcut(child,graph)
-        print("Childs Score: ", child_score)
+        if(child not in population):
+            child_score = obj_maxcut(child,graph)
+
+            print(c_iter + 1," Childs Score: ", child_score)
     
-        # Finding the min score in the list and replacing it with the child if smaller than child cut
-        min_score_index = np.argmin(population_scores)
-        if(population_scores[min_score_index] < child_score):
-            population_scores[min_score_index] = child_score
-            population[min_score_index] = child
-        c_iter += 1
+            # Finding the min score in the list and replacing it with the child if smaller than child cut
+            min_score_index = np.argmin(population_scores)
+            if(population_scores[min_score_index] < child_score):
+                population_scores[min_score_index] = child_score
+                population[min_score_index] = child
+            c_iter += 1
+        
 
     max_score_index = np.argmax(population_scores)
     max_score_vector = population[max_score_index]
@@ -61,5 +65,3 @@ if __name__ == '__main__':
     # Cut checker
     # vector = [1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1]
     # print(obj_maxcut(vector,graph))
-
- 
