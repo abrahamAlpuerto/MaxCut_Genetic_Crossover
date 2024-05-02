@@ -1,4 +1,7 @@
+
 ## Results
+
+Binary Vectors for each graph tested in results.txt folder
 
 | Graph  | Gurobis (1 hour) | L2A | Mine | Improvement from L2A % |
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
