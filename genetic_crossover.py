@@ -55,10 +55,10 @@ def algorithm_run():
     
 if __name__ == '__main__':
     # Constants
-    num_parents = 4
-    c_itMax = 20
+    num_parents = 5
+    c_itMax = 5
     # read data
-    graph = read_nxgraph('./data/syn/powerlaw_500_ID28.txt')
+    graph = read_nxgraph('./data/syn/powerlaw_500_ID15.txt')
     print("Genetic Search Start")
     algorithm_run()
 

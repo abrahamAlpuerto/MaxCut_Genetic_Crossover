@@ -10,7 +10,7 @@ from util import read_nxgraph
 from util import obj_maxcut
 
 #constants for tabuSearch
-P_iter = 80
+P_iter = 100
 MaxIter = 100000
 gamma = 60
 
