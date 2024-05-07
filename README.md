@@ -1,6 +1,8 @@
+## Solutions
+Solutions to each graph is given in /data/results.txt file as a binary vector with a label of score and graph above.
 
 ## Results
-
+Results for Gurobis QUBO solver were taken from provided text documents specifically first line obj: ...
 | Graph  | Gurobis (1 hour) | L2A | Mine | Improvement % |
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
 | powerlaw_100_ID_27 | 284 | 284 | 284 | 0.0% | 
