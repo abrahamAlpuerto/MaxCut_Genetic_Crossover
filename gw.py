@@ -14,11 +14,7 @@ from util import read_nxgraph
 from util import obj_maxcut
 
 def gw(graph):
-    """
-    Solve the relaxation (P) to obtain optimal vectors Ui.
-    Input: graph - NetworkX graph
-    Output: optimal_vectors - list of optimal vectors Ui
-    """
+
     # Edges list
     edges = graph.edges()
 

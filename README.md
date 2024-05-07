@@ -1,3 +1,6 @@
+## Algorithm Description
+This is a multiparent genetic crossover algorithm to help find the best cut. A Tabu search is also implemented with a pertebation after a certain number of non improving moves a mutation is done to the current solution; hopefully Escaping from any local optimum. Best moves are calculated in constant time with a move gains list of each node, updated per move for each node. Each element corresponds to a node in the graph and respresents the change in cut score if set is changed on that node. 
+
 ## Solutions
 Solutions to each graph is given in /data/results.txt file as a binary vector with a label of score and graph above.
 
