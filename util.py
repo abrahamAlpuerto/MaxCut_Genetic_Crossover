@@ -32,10 +32,9 @@ IndexList = List[List[int]]
 
 # read graph file, e.g., gset_14.txt, as networkx.Graph
 # The nodes in file start from 1, but the nodes start from 0 in our codes.
-def read_nxgraph(filename: str) -> nx.Graph():
+def read_nxgraph(filename: str) -> nx.Graph:
     graph = nx.Graph()
     with open(filename, 'r') as file:
-        # lines = []
         line = file.readline()
         is_first_line = True
         while line is not None and line != '':
@@ -49,7 +48,7 @@ def read_nxgraph(filename: str) -> nx.Graph():
                     is_first_line = False
                 else:
                     node1, node2, weight = line.split(" ")
-                    graph.add_edge(int(node1) - 1, int(node2) - 1, weight=weight)
+                    graph.add_edge(int(node1) - 1, int(node2) - 1, weight=float(weight))
             line = file.readline()
     return graph
 

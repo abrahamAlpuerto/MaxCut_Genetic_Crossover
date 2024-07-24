@@ -26,6 +26,7 @@ Results for Gurobis QUBO solver and L2A were taken from provided results text do
 | powerlaw_500_ID29 | 1464 | 1468 | 1473 | 0.34% | 
 | Gset_14 | 3042 | 3064 | 3063 | -0.03% | 
 | Gset_15 | 3033 | 3050 | 3050 | 0.0% | 
+| Gset_29 | -- | -- | 3355 | -- | 
 
 ## References
 
